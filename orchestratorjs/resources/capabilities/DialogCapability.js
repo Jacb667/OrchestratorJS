@@ -2,7 +2,7 @@
 module.exports = {
 
 
-    showDialog: function (title, [], validTime ) {},
+    showDialog: function (title, options, validTime ) {},
     getDialogChoice: function () {},
     
 
