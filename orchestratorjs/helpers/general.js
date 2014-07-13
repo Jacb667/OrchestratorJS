@@ -7,8 +7,8 @@ var uuid = require('node-uuid');
 var fs = require( 'fs' );
 
 this.log = function( m ) {
-  //console.log(m);
-  logger.info( m );
+  console.log(m);
+  //logger.info( m );
 }
 
 // very clos, in the same space, in vicinity
