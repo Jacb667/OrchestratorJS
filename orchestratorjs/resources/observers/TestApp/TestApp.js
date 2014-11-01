@@ -1,16 +1,16 @@
 var httprequest = require( "request" );
-var socket = require('socket.io-client').connect('http://0.0.0.0:9002');
+var socket = require('socket.io-client').connect('http://192.168.1.180:9002');
 
 socket.on( 'online', function ( contextValue, deviceIdentity ) {
-  if ( contextValue != true || deviceIdentity != 'nikkis@s3mini' )
+  if ( contextValue != true || deviceIdentity != 'Jose@Bq' )
     return;
   
   var params = {};
   params[ 'actionName' ] = 'MakeCoffee';
-  params[ 'parameters' ] = [ 'device:nikkis@gadgeteer', 'device:nikkis@s3mini' ];
+  params[ 'parameters' ] = [ 'device:Jose@Bq', 'device:Jose@Bq' ];
 
   httprequest( {
-    uri: 'http://0.0.0.0:9000/api/1/actioninstance',
+    uri: 'http://192.168.1.180:9000/api/1/actioninstance',
     method: "POST",
     form: params
   }, function( error, response, body ) {
@@ -26,10 +26,10 @@ socket.on( 'coffeeReady', function ( contextValue, deviceIdentity ) {
   
   var params = {};
   params[ 'actionName' ] = 'InviteForCoffee';
-  params[ 'parameters' ] = [ 'device:nikkis@s3mini', 'device:nikkis@desire' ];
+  params[ 'parameters' ] = [ 'device:Jose@Bq', 'device:Jose@Bq' ];
 
   httprequest( {
-    uri: 'http://0.0.0.0:9000/api/1/actioninstance',
+    uri: 'http://192.168.1.180:9000/api/1/actioninstance',
     method: "POST",
     form: params
   }, function( error, response, body ) {

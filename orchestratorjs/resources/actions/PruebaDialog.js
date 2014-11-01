@@ -12,5 +12,5 @@ this.body = function (dev, dev2) {
 
     var choice = dev.dialogCapability.getDialogChoice();
     console.log("CHOICE: "+choice);
-    dev2.talkingCapability.say("has elegido "+choice,"server","0.8");
+    dev.talkingCapability.say("has elegido "+choice,"server","0.8");
 };

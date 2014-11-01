@@ -13,13 +13,13 @@ function sleep( seconds ) {
 }
 
 var interval = 3;
-var deviceIdentity = 'nikkis@s3mini';
+var deviceIdentity = 'Jose@Bq';
 
 var values = [];
 values.push( {
   "bt_devices": [
-    [ "60:45:BD:D3:8C:63", -90 ],
-    [ "E8:99:C4:D6:77:06", -59 ],
+    [ "00:09:88:9a:cf:2e", -30 ],
+    [ "d0:e7:82:36:cf:8e", -7 ],
     [ "00:25:56:D0:04:DB", -83 ],
     [ "D0:E7:82:08:66:06", -41 ],
     [ "08:ED:B9:BA:00:F2", -89 ]
@@ -29,8 +29,8 @@ values.push( {
 
 values.push( {
   "bt_devices": [
-    [ "60:45:BD:D3:8C:63", -90 ],
-    [ "00:25:56:D0:04:DB", -83 ],
+    [ "00:09:88:9a:cf:2e", -20 ],
+    [ "d0:e7:82:36:cf:8e", -12 ],
     [ "D0:E7:82:08:66:06", -41 ],
     [ "08:ED:B9:BA:00:F2", -89 ]
   ]
@@ -39,8 +39,8 @@ values.push( {
 
 values.push( {
   "bt_devices": [
-    [ "60:45:BD:D3:8C:63", -90 ],
-    [ "E8:99:C4:D6:77:06", -59 ],
+    [ "00:09:88:9a:cf:2e", -10 ],
+    [ "d0:e7:82:36:cf:8e", -18 ],
     [ "00:25:56:D0:04:DB", -83 ],
     [ "D0:E7:82:08:66:06", -41 ],
     [ "08:ED:B9:BA:00:F2", -89 ]

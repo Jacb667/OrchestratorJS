@@ -10,13 +10,13 @@
 	"server" : {
 		"host" : "localhost",
 		"port" : 9000,
-		"socketio_debug": true
+		"socketio_debug": false
 	},
 
 	"database" : "socialDevicesOrchestratorDB",
 
 	"require_authentication" : true,
-	"admin_users" : ["admin", "nikkis"],
+	"admin_users" : ["admin", "Jose"],
 
 	"log_path" : "/logs/",
 
@@ -35,13 +35,13 @@
 		"ojsDeviceRegistry" : {
 			"enabled": true,
 			"port" : 9002,
-			"debug": false
+			"debug": true
 		},
 
 		"ojsConsole": {
 			"enabled": true,			
 			"port" : 9001,
-			"debug": false
+			"debug": true
 		}
 	},
 

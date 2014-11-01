@@ -4,6 +4,7 @@ module.exports = {
   body: function ( dev ) {
     
     dev.playerCapability.showUrlPhoto("http://www.google.es/");
+    
   }
 
 };
