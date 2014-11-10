@@ -178,7 +178,7 @@ this.initialize = function( app ) {
     // save changed metadata and emit to observers and browsers
     socket.on( 'ojs_context_data', function( actionId, deviceId, metadataDict ) {
 
-      log('wo oooo oo o');
+      //log('wo oooo oo o');
 
       DEVICE_HANDLER.upsertMetadata( deviceId, metadataDict, function( err, devices ) {} );
     } );
@@ -384,6 +384,28 @@ function DeviceStub( identity, name, action ) {
   this.deviceName = name;
   this.action = action;
   this.ownerName = name;
+  
+  this.getContextData = function( key ) {
+    var waitAction = this.action;
+    this.Fiber = require("fibers");
+    DEVICE_HANDLER.findDevice( this.identity, function( err, device ) {
+    
+      if( err || !device ) {
+        waitAction.run( undefined );
+        return;
+      } else {
+    
+        var r = device[ key ];
+        if( !r ) {
+          r = device.metadata[ key ];
+        }
+        waitAction.run( r );
+        return;
+      }
+    } );
+    var rVal = this.Fiber.yield();
+    return rVal;
+  };
 
   this.invoke = function( methodArguments ) {
     return this.action.sendMethodCall( this.identity, methodArguments );
@@ -735,7 +757,7 @@ log(actionName);
       var coordinatorDeviceIdentity = HELPERS.getIdentities( [coordinatorDeviceIdentity] );
 
 
-log('SALIL EKA SALIL VIKA 0');
+//log('SALIL EKA SALIL VIKA 0');
 
       // check that the coordinator device is connected to OJS
       var participantInfo = [];
@@ -753,7 +775,7 @@ log('SALIL EKA SALIL VIKA 0');
       var soc = CONNECTION_POOL[ coordinatorDeviceIdentity ];
       soc.emit( 'ojs_action_instance', params );
 
-      log('SALIL EKA SALIL VIKA 1');
+      //log('SALIL EKA SALIL VIKA 1');
 
       // command also other participants to start peripheral?
 
@@ -905,7 +927,7 @@ function executeAction( res, actionName, deviceModels, parameters ) {
       for ( j in deviceStubs ) {
         var stub = deviceStubs[ j ];
         if ( device_id_param == 'device:' + stub.identity ) {
-          log( 'match' );
+          //log( 'match' );
           return stub;
         }
       }
@@ -918,10 +940,10 @@ function executeAction( res, actionName, deviceModels, parameters ) {
         if ( param instanceof Array ) {
           replaceIdsWithDevices( param );
         } else if ( param.slice( 0, 7 ) == 'device:' ) {
-          log( 'device param: ' + param );
+          //log( 'device param: ' + param );
           paramsArray[ i ] = getStubByDeviceIdParam( param );
         } else {
-          log( 'regular param: ' + param );
+          //log( 'regular param: ' + param );
         }
       }
     }
