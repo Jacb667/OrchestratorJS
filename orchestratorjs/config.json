@@ -39,7 +39,7 @@
 		},
 
 		"ojsConsole": {
-			"enabled": true,			
+			"enabled": false,			
 			"port" : 9001,
 			"debug": true
 		}

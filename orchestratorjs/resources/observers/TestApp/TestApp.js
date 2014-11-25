@@ -17,9 +17,21 @@ module.exports = {
     pubsub.on( 'online', function( contextValue, deviceIdentity ) {
 
       // runs every ten seconds until the app gets stopped
+      
+      var paramsDialog = {
+        actionName: 'DialogTest',
+        parameters: [ 'device:' + deviceIdentity ]
+      };
+
+      httprequest( {
+        uri: '/api/1/actioninstance',
+        method: "POST",
+        form: paramsDialog
+      }, function( error, response, body ) {} );
 
         console.log( 'tick' );
-      	console.log( deviceIdentity );
+      
+      	/*console.log( deviceIdentity );
         
               var paramsPhoneDialog = {
                 actionName: 'ShowVisitingCard',
@@ -30,7 +42,7 @@ module.exports = {
                 uri: '/api/1/actioninstance',
                 method: "POST",
                 form: paramsPhoneDialog
-              }, function( error, response, body ) {} );
+              }, function( error, response, body ) {} );*/
 
 
     } );

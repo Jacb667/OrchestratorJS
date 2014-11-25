@@ -5,7 +5,7 @@ this.body = function (d1) {
     var misc = require('./misc.js');
       
 		var s = 'say yes or no';
-    d1.talkingCapability.say(s);
+    d1.talkingCapability.say(s,'david','0.8');
     d1.dialogCapability.showDialog(s, ['YES','NO'], 60);
     while( !d1.dialogCapability.getDialogChoice() ) {
       misc.sleep(1);
@@ -17,5 +17,5 @@ this.body = function (d1) {
     d1.talkingCapability.say('the choice is '+choice,'david','0.8');
     
     
-
+		return choice;
 };

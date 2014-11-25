@@ -211,7 +211,8 @@ function emitContextData( contextDataDict ) {
                 for ( newKey in newMetadata ) {
 
                   // publish only when metadata changes
-                  if ( !deviceMetadata[ newKey ] || deviceMetadata[ newKey ] != newMetadata[ newKey ] ) {
+                  // jacb: changed, I need the emit always =)
+                  //if ( !deviceMetadata[ newKey ] || deviceMetadata[ newKey ] != newMetadata[ newKey ] ) {
                     var key = newKey; //newKey + '+' + identity;
                     publishThese[ key ] = {
                       deviceIdentity: identity,
@@ -219,7 +220,7 @@ function emitContextData( contextDataDict ) {
                       value: newMetadata[ newKey ],
                       oldValue: deviceMetadata[ newKey ]
                     };
-                  }
+                  //}
                   // check the null issue!!
                   deviceMetadata[ newKey ] = newMetadata[ newKey ];
                 }

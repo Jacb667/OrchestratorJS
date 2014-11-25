@@ -16,12 +16,16 @@ this.rssiToM = function( rssi ) {
   if( typeof( rssi ) == 'string' )
     rssi = parseInt( rssi );
 
-  if( rssi > -70 )
+  if( rssi > 195 )
     return 0.1;
-  else if( rssi > -89 )
-    return 1.0;
+  else if( rssi > 140 )
+    return 0.25;
+  else if( rssi > 90 )
+    return 0.5;
+  else if( rssi > 40 )
+    return 0.75;
   else
-    return 10;
+    return 1.0;
 };
 
 

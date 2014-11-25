@@ -8,6 +8,10 @@ module.exports = {
         var methodArguments = ['NotificationCapability', 'showNotificationTimeout', [title,message,seconds]];
         return this.device.invoke(methodArguments);
     },
+    showNotificationJSON: function(title,message,jsondata) {
+        var methodArguments = ['NotificationCapability', 'showNotificationJSON', [title,message,jsondata]];
+        return this.device.invoke(methodArguments);
+    },
     showToast: function(message,seconds) {
         var methodArguments = ['NotificationCapability', 'showToast', [message,seconds]];
         return this.device.invoke(methodArguments);
